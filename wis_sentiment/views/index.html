@@ -1,65 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Nathan Rude">
-    <meta name="description" content="Nathan Rude">
-    <meta name="keywords" content="Nathan Rude, Knoesis, kno.e.sis">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Title</title>
-
-    <!-- Bootstrap -->
-    <link href="stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="stylesheets/bootflat.min.css" rel="stylesheet">
-    <link href="stylesheets/mystyle.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="inner cover">
-            <div class="masthead clearfix container-fluid">
-              <h3 class="masthead-brand">Header</h3>
-              <!--<nav>
-                <ul class="nav masthead-nav">
-                < Nav bar hides inactive sections and unhides active section >
-
-                  <li data-rel="1" class="active"><a class="cursor-pointer">Home</a></li>
-                  <li data-rel="2"><a class="cursor-pointer">Professional</a></li>
-                  <li data-rel="3"><a class="cursor-pointer">Personal</a></li>
-                  <li data-rel="4"><a class="cursor-pointer">Tweet</a></li>
-                </ul>
-            </nav>-->
-            </div>
-
-            <div id="content-body" class="lead container-fluid">
-              <div class="inner row">
-              </div>            
-          </div>
-
-          <div class="mastfoot container-fluid">
-            <div class="inner">
-              <p>This class is affiliated with <a target="_blank" href="http://knoesis.org/">Kno.e.sis</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
-  </body>
-</html>
+ {% extends 'layout.html' %}
+ 
+ {% block head %}
+ {% endblock %}
+ 
+ {% block content %}
+ <div class="row">
+	<div class="col-md-6">
+		<h3 class="text-center">Header Text</h3>
+	</div>
+	<div class="col-md-6">
+		<h3 class="text-center">Related Tweets</h3>
+	</div>
+</div>
+<footer>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<p class="text-center">McIntyre, Rude &copy;2016</p>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</footer>
+{% endblock %}
