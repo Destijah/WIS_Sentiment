@@ -32,7 +32,7 @@ function tweetByID(tweet_id){
     var deferred = Q.defer();
     T.get('statuses/show', { id: tweet_id }, 
         function(err, data, response) {
-            deferred.resolve(data.statuses);
+            deferred.resolve(data);
     })
     return deferred.promise;
 }
