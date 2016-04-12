@@ -16,7 +16,12 @@ function tweetByTopic(topic, start_time, end_time, count){
     var deferred = Q.defer();
     T.get('search/tweets', { q: query, count: count }, 
         function(err, data, response) {
-            deferred.resolve(data.statuses);
+        	if (err){
+        		deferred.reject(new Error(err));
+        	}
+        	else{
+            	deferred.resolve(data.statuses);
+        	}
     })
     return deferred.promise;
 }
@@ -32,7 +37,12 @@ function tweetByID(tweet_id){
     var deferred = Q.defer();
     T.get('statuses/show', { id: tweet_id }, 
         function(err, data, response) {
-            deferred.resolve(data);
+        	if (err){
+        		deferred.reject(new Error(err));
+        	}
+        	else{
+            	deferred.resolve(data);
+    		}
     })
     return deferred.promise;
 }
