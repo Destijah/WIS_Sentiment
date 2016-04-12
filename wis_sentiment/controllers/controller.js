@@ -28,12 +28,20 @@ module.exports = {
 		twitter.tweetByTopic(search, since, until, count)
                         .then(tweetCallback)
                         .then(callback)
+                        .catch(function(err){
+                            return err
+                        })
 	},
 
 	id: function idController(id, callback){
 		twitter.tweetByID(id)
                     .then(tweetIdCallback)
                     .then(callback)
+                    .catch(function(err){
+                        // console.log(typeof(err));
+                        // console.log(err.text == undefined);
+                        return err;
+                    })
 	}
 };
 //tweetByTopic("#trump", "2016-03-21", "2016-03-24", count=100)
@@ -51,6 +59,8 @@ module.exports = {
     // }
 //})
 
-// idController("541278904204668929", function(tweet){
-//     console.log(tweet.text)
+// module.exports.id("111", function(tweet){
+//     console.log(typeof(tweet));
+//     console.log(tweet)
+
 // })
