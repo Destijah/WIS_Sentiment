@@ -10,7 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 // Custom JS code
-var controller = require('./controllers/controller');
+//var controller = require('./controllers/controller');
 
 var app = express();
 
