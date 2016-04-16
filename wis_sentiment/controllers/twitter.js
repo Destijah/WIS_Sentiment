@@ -76,6 +76,7 @@ function tweetByTopic(topic, start_time, end_time, count){
         		deferred.reject(new Error(err));
         	}
         	else{
+                console.log(response)
             	deferred.resolve(data.statuses);
         	}
     })
