@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.18)  16 APR 2016 18:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.18)  16 APR 2016 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,19 +239,19 @@ Missing character: There is no ™ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [1]
-<fig/Twitter.png, id=15, 578.16pt x 433.62pt>
+ [1] [2]
+<fig/Twitter.png, id=19, 578.16pt x 433.62pt>
 File: fig/Twitter.png Graphic file (type png)
  <use fig/Twitter.png>
-Package pdftex.def Info: fig/Twitter.png used on input line 165.
+Package pdftex.def Info: fig/Twitter.png used on input line 187.
 (pdftex.def)             Requested size: 187.89914pt x 140.92482pt.
 
-<fig/Youtube.png, id=17, 578.16pt x 433.62pt>
+<fig/Youtube.png, id=21, 578.16pt x 433.62pt>
 File: fig/Youtube.png Graphic file (type png)
  <use fig/Youtube.png>
-Package pdftex.def Info: fig/Youtube.png used on input line 171.
+Package pdftex.def Info: fig/Youtube.png used on input line 193.
 (pdftex.def)             Requested size: 187.89914pt x 140.92482pt.
- [2 <./fig/Twitter.png> <./fig/Youtube.png>] (./FinalReport.bbl
+ [3 <./fig/Twitter.png> <./fig/Youtube.png>] [4] (./FinalReport.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--8
 []\OT1/cmr/m/n/10.95 brnrd.me.  On so-cial sen-ti-ment and sen-ti-ment anal-y-s
 is.  $\OT1/cmtt/m/n/10.95 http : / / brnrd . me /
@@ -266,15 +266,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--14
 /cmtt/m/n/10.95 http : / / brnrd . me /
  []
 
-) [3] (./FinalReport.aux) ) 
+) [5] (./FinalReport.aux) ) 
 Here is how much of TeX's memory you used:
- 3226 strings out of 495020
- 50138 string characters out of 6181324
+ 3227 strings out of 495020
+ 50153 string characters out of 6181324
  114955 words of memory out of 5000000
- 6416 multiletter control sequences out of 15000+600000
- 10261 words of font info for 36 fonts, out of 8000000 for 9000
+ 6417 multiletter control sequences out of 15000+600000
+ 10568 words of font info for 37 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,7n,38p,587b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,38p,698b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
@@ -283,10 +283,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FinalReport.pdf (4 pages, 161184 bytes).
+Output written on FinalReport.pdf (6 pages, 168949 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

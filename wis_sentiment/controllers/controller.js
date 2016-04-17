@@ -38,6 +38,7 @@ The returned data structure is defined as
 Error will be null if a successfull call was made. If an error occurred, the sentiment
 and tweets will be null and error will be defined.
 */
+
 var twitter = require('./twitter');
 var sentiment = require('./sentiment');
 
@@ -116,18 +117,21 @@ module.exports = {
 //idController("541278904204668929", console.log)
 
 // EXAMPLES
-// module.exports.topic("trump", "2016-01-21", "2016-04-29", 100, function(arr){
-//     // Filter out data that is undefined
+module.exports.topic("harmony", "2016-01-21", "2016-04-29", 100, function(arr){
+    // Filter out data that is undefined
 
-//     // Will print out all tweets
-//     console.log(arr.sentiment)
-//     console.log(arr.tweets[0].created_at)
-//     console.log(arr.tweets[arr.tweets.length-1].created_at)
-//     // for(var i =0; i<arr.tweets.length;i++){
-//     //     console.log(arr.tweets[i].tweet_id + "    " +i)
-//     // }
-// })
+    // Will print out all tweets
+    console.log(arr.sentiment)
+    console.log(arr.tweets[0].text)
+    console.log(arr.tweets[arr.tweets.length-1].created_at)
+    // for(var i =0; i<arr.tweets.length;i++){
+    //     console.log(arr.tweets[i].text + "    " +i)
+    // }
+})
 
 // module.exports.id("11111", function(tweet){
 //     console.log(tweet)
 // })
+
+// Search topics
+// gender neutral bathrooms
