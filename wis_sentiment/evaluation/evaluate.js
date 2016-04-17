@@ -114,7 +114,7 @@ while (true) {
         var testData = sentiment.textSentiment(text);
         var predvalence = testData.valence;
 
-        // Row is predicted value, column is actual
-        confusionmatrix[valencedict[predvalence]][valencedict[valence]] += 1;
+        // Row is actual value, column is predicted
+        confusionmatrix[valencedict[valence]][valencedict[predvalence]] += 1;
     }
 }
