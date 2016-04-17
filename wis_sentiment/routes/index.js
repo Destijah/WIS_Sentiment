@@ -25,16 +25,21 @@ router.post('/tweets', function(req, res) {
 	
 	if (specifier == "topic")
 	{
-		controller.topic(tweet, start, end, 100, function(arr){
+		controller.topic(tweet, start, end, 100, function(body){
 			// Filter out data that is undefined
-			arr = arr.filter(function (x) {return x != undefined});
-			res.render('tweets', { twit: arr });
+			tweets = body['tweets'].filter(function(x) { return x != undefined });
+			error = body['error']
+			sentiment = body['sentiment']
+			res.render('tweets', { tweets: tweets, sentiment: sentiment, error: error });
 		});
 	}
 	else if (specifier == "tweet")
 	{
 		controller.id(tweet, function(body){
-			res.render('tweets', { twit: body });
+			tweets = body['tweets']
+			error = body['error']
+			sentiment = body['sentiment']
+			res.render('tweets', { tweets: tweets, sentiment: sentiment, error: error });
 		});
 	}
 });
