@@ -36,6 +36,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{array}
 \usepackage{float}
 \usepackage{url}
 \DeclareGraphicsExtensions{.png}
@@ -123,7 +124,13 @@ This application can be split into two parts: a frontend for the user to select 
 \subsection{Frontend}
 The user interface was developed with HTML, CSS and Javascript, technologies that have been learned in class. Specifically we used nodejs as a server backend to host the site. We used the Express framework for routing and logic as well as Swig for the user interface templating language. Swig provided a flexible design that incorporated template inheritance and ease of use. In addition to Swig, Bootstrap was used for the CSS styling. 
 
-The user interface is comprised of two parts, the user input section, and the  the results display. The user input section consists of a start date, end date, topic search, and a selection to search by topic or by tweet id. The start and end dates define the time range that returned results will occur in. The topic search input can be a tweet topic, or can be a tweet id. If the tweet id check mark is selected, a specific tweet with the specified id will be searched and if found, it's sentiment will be analysed. The tweet results section shows the tweet, the tweet sentiment and the person who tweeted it. The accumulated tweet sentiment is also displayed to the user. 
+The user interface is comprised of two parts, the user input section, and the  the results display. A depiction is show in Figure \ref{fig:ui}. The user input section consists of a start date, end date, topic search, and a selection to search by topic or by tweet id. The start and end dates define the time range that returned results will occur in. The topic search input can be a tweet topic, or can be a tweet id. If the tweet id check mark is selected, a specific tweet with the specified id will be searched and if found, it's sentiment will be analysed. The tweet results section shows the tweet, the tweet sentiment and the person who tweeted it. The accumulated tweet sentiment is also displayed to the user. 
+
+\begin{figure}[t!]
+\includegraphics[width=\textwidth,scale=0.5]{fig/ui.png}
+\caption{User Interface}
+\label{fig:ui}
+\end{figure}
 
 Using these technologies we can create a dynamic layout that, given a search topic, can display several retrieved tweets with their individual sentiment, as well as the overall sentiment of a topic.
 
@@ -201,11 +208,38 @@ Youtube & .53 & .55 \\ \hline
 Since the algorithms performs much better than just guessing the class (which would be a 33.3\% precision), we conclude that the performance of this algorithm is adequate for the task at hand.
 
 \section{Results}
-put sample queries here and evaluate and analyze the results
+One usage of this application was for "gender neutral bathrooms". As a current controversial topic in the U.S., this provides a good platform to determine the sentiment of the populous. While the total accumulated sentiment fluctuates rapidly (since we are only viewing 100 tweets), we can see some examples of positive and negative tweets in Figure \ref{tab:bathrooms}. We don't display the neutral results since the more polar opinions will depict negative and positive feelings about the topic.
 
-1) gender neutral bathrooms
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}p{8cm}|>{\centering\arraybackslash}p{8cm}|} \hline
+\textbf{Positive} & \textbf{Negative} \\ \hline \hline
+would you feel comfortable in a gender neutral bathroom? rt after voting, I'm trying to prove a point & 
+isn't the bathroom in the house a gender neutral one? Ppl don't seem to have problems with those \\ \hline
+
+ This new gender neutral bathroom at Lincoln probably gonna be clean af so I'm in that thing, Idc I'll be transgender for a min to use it. & 
+ Transgender Bathroom hysteria is crazy smh, simple solution is to add a 3rd bathroom gender neutral! \\ \hline 
  
-\section{Conclusion}
+ god bless the gender neutral bathroom & 
+ That awks moment when you realize you've been using the guys bathroom by accident. Gender neutral, I guess?????? \\ \hline
+\end{tabular}
+\caption{Gender neutral bathroom results}
+\label{tab:bathrooms}
+\end{table}
+
+
+By examining this data, we can determine the more positive and negative aspects of a specific topic. For example, in Fig \ref{tab:bathrooms}, the first positive tweets mentions how people may or may not be comfortable in a shared bathroom while the first negative comment points out that household bathrooms are gender neutral. Similarly, the 
+second negative comment offers one solution of adding an additional third gender neutral bathroom. 
+
+Utilizing this application can provide a good start for garnering a populations' feeling on a subject. 
+
+\section{Conclusion \& Future Work}
+This application provides a user interface to view tweets about a topic and view the overall sentiment about that topic. This application can provide a baseline approach for citizen sensing about particular topics. By examining the polar opinions on topics, the pros and cons of a topic can be established and considered when evaluating the merits certain topics like proposed legislation. This allows for more informed decisions to be made while also considering the opinions of the populous as a whole.
+
+This project could be further enhanced to support geolocation and user history models. Defining a geolocation filter would allow for a topic search at a finer level. The sentiment of topics could be compared across different localities such as cities and more information can be gleaned. Moreover, by incorporating user models, we can establish how reliable a user's sentiment on a topic is by modelling their past behavior. For example, a user that mostly posts negative comments and also posted negatively about the search topic might carry less weight than a person who has a more neutral posting history who also posted negatively. Using this enhanced functionality would provide a more accurate depiction of the sentiment on a specific topic.
+
+ 
+
 \pagebreak
 
 \bibliography{egbib}

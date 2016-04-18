@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+#scrollable {
+	overflow-y: auto;
+	max-height: 500px;
+}
