@@ -73,12 +73,14 @@ var buildTweetData = function(tweet){
 }
 
 var tweetIdCallback = function(tweet){
+    console.log(tweet);
     var data = buildTweetData(tweet);
     var returned = {
         sentiment: data.polarity,
         tweets: [data],
         error: null
     }
+    console.log(returned);
 
     return returned;
 }
@@ -94,7 +96,7 @@ module.exports = {
                                 tweets: null,
                                 error: err
                             }
-                            return data
+                            callback(data);
                         })
 	},
 
@@ -108,7 +110,7 @@ module.exports = {
                                 tweets: null,
                                 error: err
                             }
-                        return data;
+                        callback(data);
                     })
 	}
 };
