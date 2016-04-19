@@ -32,7 +32,7 @@ router.post('/tweets', function(req, res) {
 		{
 			controller.topic(tweet, start, end, 100, function(body){
 				// Filter out data that is undefined
-				var tweets = body['tweets'].filter(function(x) { return x != undefined });
+				var tweets = body['tweets']
 				var error = body['error']
 				var sentiment = body['sentiment']
 
@@ -48,7 +48,7 @@ router.post('/tweets', function(req, res) {
 					}
 				}
 				
-				if (!tweets.length)
+				if (tweets && !tweets.length)
 				{
 					res.render('tweets', { error: "No results found for your search..." });
 				}
