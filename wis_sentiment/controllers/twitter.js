@@ -10,64 +10,8 @@ var keys = keys = {
 
 var T = new Twit(keys);
 
-// var promiseWhile = function(condition, action) {
-//     var resolver = Q.defer();
-
-//     var loop = function() {
-//         if (!condition()) return resolver.resolve();
-//         return Q.resolve(action())
-//             .then(loop)
-//             .catch(resolver.reject);
-//     };
-
-//     process.nextTick(loop);
-
-//     return resolver.promise;
-// };
-
-// function tweetByTopic(topic, start_time, end_time, count){
-//     var query = encodeURI(topic.concat(" since:", start_time, " until:", end_time));
-
-//     var deferred = Q.defer();
-//     var tweets = [];
-//     var newTweets = [null]; // must not be empty for initial condition to be met
-//     var maxId = 0;
-//     var remainingCount = count;
-
-    
-//     promiseWhile(function () {
-//     	console.log(newTweets.length)
-//     	console.log(remainingCount)
-//     	return newTweets.length > 0 && remainingCount > 0;
-//     }, function(){
-//     	return Q.Promise(function(resolve, reject){
-//     		var currCount = Math.min(100, remainingCount);
-//     		var parameters = {q: query, count: currCount, result_type: "recent", lang: "en"};
-
-//     		if (maxId > 0){
-//     			parameters.max_id = maxId;
-//     		}
-//     		T.get('search/tweets', parameters)
-//     		.catch(function(err){
-//     			reject(new Error(err));
-//     		}).then(function(result){
-// 		    	newTweets = result.data.statuses;
-// 		    	remainingCount -= currCount;
-
-// 		    	maxId = newTweets[newTweets.length - 1];
-// 		    	tweets = tweets.concat(newTweets);
-// 		    	resolve(tweets)
-//     		})
-
-//     	}).then(function(){
-//     		deferred.resolve(tweets)
-//     	})
-//     })
-
-//     return deferred.promise;
-// }
 function tweetByTopic(topic, start_time, end_time, count){
-    var query = encodeURI(topic.concat(" since:", start_time, " until:", end_time));
+    var query = topic.concat(" since:", start_time, " until:", end_time);
 
     var deferred = Q.defer();
     T.get('search/tweets', { q: query, count: count }, 
@@ -102,10 +46,6 @@ function tweetByID(tweet_id){
     })
     return deferred.promise;
 }
-
-//tweetByTopic("nasa", "2016-02-21", "2016-03-23", count=100)
-//tweetByTopic("#trump", "2016-03-21", "2016-03-24", count=100)
-//tweetByID(541278904204668929);
 
 module.exports = {
 	tweetByID : tweetByID,

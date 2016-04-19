@@ -116,8 +116,11 @@ module.exports = {
 //topicController("trump", "2016-01-21", "2016-04-29", 100000, console.log)
 //idController("541278904204668929", console.log)
 
-// module.exports.id("11111", function(tweet){
-//     console.log(tweet)
+// module.exports.topic("trump", "2016-01-21", "2016-04-15", 100, function(arr){
+//     // arr.foreach(function(tweet){
+//     //     console.log(tweet.created_at)
+//     // })
+//     console.log(arr)
 // })
 
 // Search topics
