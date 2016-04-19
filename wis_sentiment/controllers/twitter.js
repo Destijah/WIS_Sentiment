@@ -73,7 +73,7 @@ function tweetByTopic(topic, start_time, end_time, count){
     T.get('search/tweets', { q: query, count: count }, 
         function(err, data, response) {
         	if (err){
-        		deferred.reject(new Error(err));
+        		deferred.reject(err);
         	}
         	else{
             	deferred.resolve(data.statuses);
@@ -94,10 +94,10 @@ function tweetByID(tweet_id){
     T.get('statuses/show', { id: tweet_id }, 
         function(err, data, response){
             if (err){
-                deferred.reject(new Error(err));
+                deferred.reject(err);
             }
             else{
-                deferred.resolve(data.statuses);
+                deferred.resolve(data);
             }
     })
     return deferred.promise;
