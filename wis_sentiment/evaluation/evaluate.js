@@ -8,6 +8,10 @@ var LineReaderSync = require("line-reader-sync");
 //filename = "../data/rw1046.txt"
 //filename = "../data/twitter4242.txt"
 //filename = "../data/YouTube3407.txt"
+if(process.argv.length < 3){
+    console.log("Usage: evaluate <filename>")
+    return
+}
 filename = process.argv[2];
 
 var lrs = new LineReaderSync(filename)

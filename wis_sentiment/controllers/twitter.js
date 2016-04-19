@@ -14,7 +14,7 @@ function tweetByTopic(topic, start_time, end_time, count){
     var query = topic.concat(" since:", start_time, " until:", end_time);
 
     var deferred = Q.defer();
-    T.get('search/tweets', { q: query, count: count }, 
+    T.get('search/tweets', { q: query, count: count, lang: "en" }, 
         function(err, data, response) {
         	if (err){
         		deferred.reject(err);
