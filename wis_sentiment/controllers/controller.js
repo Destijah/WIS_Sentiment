@@ -87,7 +87,13 @@ var tweetIdCallback = function(tweet){
 
 module.exports = {
 	topic: function topicController(search, since, until, count, callback){
-		twitter.tweetByTopic(search, since, until, count)
+        // Twitter until api is exclusive. Need to add a day to make it inclusive
+        var d = until.match(/(\d+)/g);
+        // Add extra day to make until inclusive
+        var dd = new Date(d[0], d[1]-1, parseInt(d[2])+1); // month is 0 indexed
+        until = dd.getFullYear()+'-'+(parseInt(dd.getMonth())+1)+'-'+dd.getDate();
+        
+        twitter.tweetByTopic(search, since, until, count)
                         .then(tweetCallback)
                         .then(callback)
                         .catch(function(err){
@@ -118,11 +124,13 @@ module.exports = {
 //topicController("trump", "2016-01-21", "2016-04-29", 100000, console.log)
 //idController("541278904204668929", console.log)
 
-// module.exports.topic("trump", "2016-01-21", "2016-04-15", 100, function(arr){
+// module.exports.topic("trump", "2016-01-21", "2016-04-18", 100, function(arr){
 //     // arr.foreach(function(tweet){
 //     //     console.log(tweet.created_at)
 //     // })
-//     console.log(arr)
+
+//     //console.log(arr)
+    
 // })
 
 // Search topics
