@@ -4,7 +4,7 @@
 	{% if error != null %}
 		<p class="text-danger">Oh no! {{ error }}</p>
 	{% else %}
-		<h5>Total Sentiment: {{ sentiment }}</h5>
+		<h5>Total Sentiment for {{ tweets.length }} Tweet{% if tweets.length != 1 %}s{% endif %}: {% if sentiment > 0 %}<span class="text-success">{% elif sentiment < 0 %}<span class="text-danger">{% else %}<span>{% endif %}{{ sentiment }}</span></h5>
 		<div id="scrollable">
 			{% for x in tweets %}
 				<div class="bg-success row img-rounded">
