@@ -13,7 +13,7 @@ router.post('/tweets', function(req, res) {
 	var end = req.body.end;
 	var tweet = req.body.tweet;
 	var specifier = req.body.specifier;
-	
+
 	if (tweet == "")
 	{
 		res.render('tweets', { error: "The tweet input field cannot be blank!" });
@@ -35,10 +35,17 @@ router.post('/tweets', function(req, res) {
 				var tweets = body['tweets'].filter(function(x) { return x != undefined });
 				var error = body['error']
 				var sentiment = body['sentiment']
-				
+
 				if (error != null)
 				{
-					error = errror.message;
+					if (error.message != null && error.message.indexOf("getaddrinfo")  == -1)
+					{
+						error = error.message;
+					}
+					else
+					{
+						error = "Undefined error."
+					}
 				}
 				
 				if (!tweets.length)
@@ -67,7 +74,14 @@ router.post('/tweets', function(req, res) {
 				
 				if (error != null)
 				{
-					error = error.message;
+					if (error.message != null && error.message.indexOf("getaddrinfo")  == -1)
+					{
+						error = error.message;
+					}
+					else
+					{
+						error = "Undefined error."
+					}
 				}
 				
 				res.render('tweets', { tweets: tweets, sentiment: sentiment, error: error });
