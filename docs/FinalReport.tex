@@ -36,6 +36,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{hyperref}
 \usepackage{array}
 \usepackage{float}
 \usepackage{url}
@@ -138,7 +139,7 @@ Using these technologies we can create a dynamic layout that, given a search top
 The backend was split into two parts: tweet retrieval and text sentiment. 
 
 \subsubsection{Tweet Retrieval}
-The tweet retrieval was performed with the node module {\em twit}. This module allowed us to search twitter with query strings that encode the topic, start and end date. Using this API we can also search twitter with a specific tweet id to get the associated tweet. The twitter API does have its drawbacks however. The first drawback being that there is a usage rate limit for the search API of 180 calls per 15 minutes. 
+The tweet retrieval was performed with the node module {\em twit}. This module allowed us to search twitter with query strings that encode the topic, start and end date as well as filtering non-english tweets. Using this API we can also search twitter with a specific tweet id to get the associated tweet. The twitter API does have its drawbacks however. The first drawback being that there is a usage rate limit for the search API of 180 calls per 15 minutes. 
 
 The second limitation is the page size when using the search API. The page size denotes the number of tweets retrieved per api call up to a maximum of 100 tweets. This allows us to retrieve 100 tweets with each 180 allowed API calls for a total of 18,000 tweets each 15 minutes. This might seem like a large number, however this number can be easily exhausted when querying a popular topic. For example, querying "Trump" will return 100 results within a time window of a few seconds. Querying another, less popular topic such as "Grand Canyon" will return 100 tweets within a time window of several hours (note that this is situational and the frequency of requests could change).
 
@@ -238,6 +239,7 @@ This application provides a user interface to view tweets about a topic and view
 
 This project could be further enhanced to support geolocation and user history models. Defining a geolocation filter would allow for a topic search at a finer level. The sentiment of topics could be compared across different localities such as cities and more information can be gleaned. Moreover, by incorporating user models, we can establish how reliable a user's sentiment on a topic is by modelling their past behavior. For example, a user that mostly posts negative comments and also posted negatively about the search topic might carry less weight than a person who has a more neutral posting history who also posted negatively. Using this enhanced functionality would provide a more accurate depiction of the sentiment on a specific topic.
 
+The code for this project can be found at \url{https://github.com/Destijah/WIS_Sentiment}.
  
 
 \pagebreak
